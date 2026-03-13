@@ -10,8 +10,12 @@ import {
   ChevronRight,
   Menu,
   X,
-  Image as ImageIcon
+  Image as ImageIcon,
+  Download
 } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
+
+
 import * as GalleryImages from './assets/images/index.ts';
 
 interface Experience {
@@ -417,12 +421,79 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-slate-900 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>© {new Date().getFullYear().toString()} Er. Siddhesh Jaykumar Kodulkar. All rights reserved.</p>
+      <footer className="py-12 bg-slate-900 border-t border-slate-800 text-center text-slate-400">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-sm mb-8">© {new Date().getFullYear().toString()} Er. Siddhesh Jaykumar Kodulkar. All rights reserved.</p>
+          
+          {/* QR Code Section */}
+          <div className="bg-slate-800 rounded-2xl p-8 max-w-md mx-auto shadow-2xl border border-slate-700 group hover:shadow-blue-500/25 transition-all">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center justify-center gap-2">
+              <Download size={24} className="text-blue-400" />
+              Scan to Visit Portfolio
+            </h3>
+            <div className="bg-white p-4 rounded-xl shadow-lg mb-4 group-hover:scale-105 transition-transform " ref={(el) => { if (el) el.id = 'qr-svg'; }}>
+              <QRCodeSVG 
+                value="https://portfolio-siddhesh-sigma.vercel.app/" 
+                className='mx-auto'
+                size={200}
+                bgColor="#ffffff"
+                fgColor="#2563eb"
+                level="H"
+                includeMargin={true}
+              />
+            </div>
+
+            <p className="text-slate-300 text-sm mb-4">Scan QR code with your phone camera to instantly open my portfolio</p>
+            <button 
+              onClick={async () => {
+                const qrElement = document.getElementById('qr-svg')?.querySelector('svg');
+                if (qrElement) {
+                  const svgData = new XMLSerializer().serializeToString(qrElement);
+                  const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                  const url = URL.createObjectURL(svgBlob);
+                  
+                  // Convert SVG to PNG canvas
+                  const img = new Image();
+                  img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d')!;
+                    ctx.drawImage(img, 0, 0);
+                    canvas.toBlob((blob) => {
+                      if (blob) {
+                        const pngUrl = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = pngUrl;
+                        link.download = 'portfolio-qr.png';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(pngUrl);
+                      }
+                    }, 'image/png');
+                    URL.revokeObjectURL(url);
+                  };
+                  img.src = url;
+                } else {
+                  alert('QR code not found. Try again.');
+                }
+              }}
+
+
+              className="w-full bg-blue-600 text-white py-3 px-6 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg hover:shadow-blue-300"
+            >
+              <Download size={20} className="inline mr-2" />
+              Download QR (PNG)
+
+            </button>
+          </div>
+        </div>
       </footer>
     </div>
   );
 };
 
 export default App;
+
 
