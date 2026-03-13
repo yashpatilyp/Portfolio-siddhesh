@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Briefcase, 
   GraduationCap, 
@@ -7,21 +7,21 @@ import {
   Mail, 
   Phone, 
   Linkedin, 
-  ExternalLink,
+
   Award,
   BookOpen,
   ChevronRight,
   Menu,
   X,
-  Target,
+
   ArrowRight,
   Construction
 } from 'lucide-react';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   // Handle scroll for navbar styling and active section tracking
   useEffect(() => {
@@ -98,7 +98,7 @@ const App = () => {
     { id: 'contact', label: 'Contact' }
   ];
 
-  const scrollTo = (id) => {
+const scrollTo = (id: string): void => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
