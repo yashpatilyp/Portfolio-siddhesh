@@ -12,6 +12,7 @@ import {
   X,
   Image as ImageIcon
 } from 'lucide-react';
+import * as GalleryImages from './assets/images/index.ts';
 
 interface Experience {
   company: string;
@@ -102,40 +103,40 @@ const App = () => {
     { id: 'contact', label: 'Contact' }
   ];
 
-  const allGalleryImages = [
-    'WhatsApp Image 2026-03-13 at 10.32.24 AM.jpeg',
-    'WhatsApp Image 2026-03-13 at 10.32.25 AM.jpeg',
-    'WhatsApp Image 2026-03-13 at 10.32.26 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.27 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.28 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.29 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.31 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.32 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.33 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.34 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.36 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.38 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.39 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.40 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.42 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.44 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.45 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.46 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.48 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.49 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.50 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.52 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.53 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.54 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.55 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.56 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.57 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.59 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.33.00 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.33.01 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.33.02 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.33.03 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.33.04 AM.jpeg'
+  const allGalleryImages: string[] = [
+    GalleryImages.img1 as string,
+    GalleryImages.img2 as string,
+    GalleryImages.img3 as string,
+    GalleryImages.img4 as string,
+    GalleryImages.img5 as string,
+    GalleryImages.img6 as string,
+    GalleryImages.img7 as string,
+    GalleryImages.img8 as string,
+    GalleryImages.img9 as string,
+    GalleryImages.img10 as string,
+    GalleryImages.img11 as string,
+    GalleryImages.img12 as string,
+    GalleryImages.img13 as string,
+    GalleryImages.img14 as string,
+    GalleryImages.img15 as string,
+    GalleryImages.img16 as string,
+    GalleryImages.img17 as string,
+    GalleryImages.img18 as string,
+    GalleryImages.img19 as string,
+    GalleryImages.img20 as string,
+    GalleryImages.img21 as string,
+    GalleryImages.img22 as string,
+    GalleryImages.img23 as string,
+    GalleryImages.img24 as string,
+    GalleryImages.img25 as string,
+    GalleryImages.img26 as string,
+    GalleryImages.img27 as string,
+    GalleryImages.img28 as string,
+    GalleryImages.img29 as string,
+    GalleryImages.img30 as string,
+    GalleryImages.img31 as string,
+    GalleryImages.img32 as string,
+    GalleryImages.img33 as string,
   ];
 
   const galleryImages = showAllImages ? allGalleryImages : allGalleryImages.slice(0, 12);
@@ -216,7 +217,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition flex items-center justify-center gap-2"
             >
-              LinkedIn  <Linkedin size={18} />
+              LinkedIn <Linkedin size={18} />
             </a>
           </div>
         </div>
@@ -417,7 +418,7 @@ const App = () => {
 
       {/* Footer */}
       <footer className="py-8 bg-slate-900 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>© {new Date().getFullYear()} Er. Siddhesh Jaykumar Kodulkar. All rights reserved.</p>
+        <p>© {new Date().getFullYear().toString()} Er. Siddhesh Jaykumar Kodulkar. All rights reserved.</p>
       </footer>
     </div>
   );
