@@ -216,7 +216,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition flex items-center justify-center gap-2"
             >
-              LinkedIn <Linkedin size={18} />
+              LinkedIn  <Linkedin size={18} />
             </a>
           </div>
         </div>
