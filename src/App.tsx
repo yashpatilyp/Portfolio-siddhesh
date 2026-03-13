@@ -57,7 +57,7 @@ const App = () => {
     title: "Civil Site Engineer",
     phone: "9075224466",
     email: "sidkodulkar31102000@gmail.com",
-    linkedin: "https://in.linkedin.com/in/sidhhesh-kodulkar-2a714a20b",
+    linkedin: "https://www.linkedin.com/in/siddhesh-kodulkar-2a714a20b/",
     address: "10/977 Rajrajeshwari nagar, Vardhaman chowk, Ichalkaranji",
     profile: "To secure a challenging position as a site engineer in a reputed organization where I can utilize my technical expertise, project coordination skills, and site management abilities to ensure efficient project execution and organizational growth.",
     skills: ["AutoCAD", "MS Office", "Excel", "Q-GIS", "Quantity Surveying", "Construction Site Management", "SketchUp (Learning)", "STAAD-PRO"],
