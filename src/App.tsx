@@ -103,9 +103,9 @@ const App = () => {
   ];
 
   const allGalleryImages = [
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.24 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.25 AM.jpeg',
-    '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.26 AM.jpeg',
+    'WhatsApp Image 2026-03-13 at 10.32.24 AM.jpeg',
+    'WhatsApp Image 2026-03-13 at 10.32.25 AM.jpeg',
+    'WhatsApp Image 2026-03-13 at 10.32.26 AM.jpeg',
     '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.27 AM.jpeg',
     '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.28 AM.jpeg',
     '/src/assets/images/WhatsApp Image 2026-03-13 at 10.32.29 AM.jpeg',
