@@ -17,6 +17,7 @@ import { QRCodeSVG } from 'qrcode.react';
 
 
 import * as GalleryImages from './assets/images/index.ts';
+import { profilePhoto } from './assets/images/index.ts';
 
 interface Experience {
   company: string;
@@ -198,31 +199,49 @@ const App = () => {
 
       {/* Hero Section */}
       <section id="home" className="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 via-white to-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full animate-pulse">
-            Available for Site Engineer Roles
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 text-center lg:text-left">
+          {/* Profile Image */}
+          <div className="flex-shrink-0">
+            <div className="relative group">
+              <img
+                src={profilePhoto}
+                alt={userData.name}
+                className="w-72 h-72 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-8 border-white/50 group-hover:border-blue-200/50 transition-all duration-500 hover:scale-105 hover:shadow-blue-500/25 bg-gradient-to-r from-blue-50 to-indigo-50 p-2"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <p className="mt-6 text-sm font-medium text-slate-600 tracking-wide uppercase">Civil Site Engineer</p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
-            Building the Future, <span className="text-blue-600">One Site at a Time.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {userData.profile}
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button 
-              onClick={() => scrollTo('contact')}
-              className="px-8 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition shadow-lg shadow-blue-200"
-            >
-              Contact Me
-            </button>
-            <a 
-              href={userData.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition flex items-center justify-center gap-2"
-            >
-              LinkedIn <Linkedin size={18} />
-            </a>
+
+          {/* Hero Content */}
+          <div className="flex-1 max-w-2xl lg:max-w-3xl">
+            <div className="inline-block px-6 py-2 mb-8 text-sm font-bold text-blue-700 bg-blue-100/80 backdrop-blur-sm rounded-full shadow-lg animate-pulse border border-blue-200/50">
+              Available for Site Engineer Roles
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-slate-900 via-slate-800 to-blue-900 bg-clip-text text-transparent mb-8 leading-tight">
+              Building the Future,
+              <span className="block text-transparent bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text mt-2">One Site at a Time.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed">
+              {userData.profile}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => scrollTo('contact')}
+                className="px-10 py-4 bg-gradient-to-r from-blue-700 to-blue-800 text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 transition-all duration-300 border-0"
+              >
+                Contact Me
+              </button>
+              <a 
+                href={userData.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-10 py-4 bg-white/80 backdrop-blur-sm border-2 border-slate-200 text-slate-800 rounded-2xl font-bold text-lg hover:bg-white hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg"
+              >
+                View LinkedIn <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -307,6 +326,7 @@ const App = () => {
             </button>
             <img 
               src={selectedImage} 
+              loading="lazy" 
               alt="Full project photo"
               className="w-full h-auto max-h-[95vh] object-contain rounded-2xl shadow-2xl" 
             />

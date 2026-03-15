@@ -32,3 +32,5 @@ export { default as img31 } from './WhatsApp Image 2026-03-13 at 10.33.02 AM.jpe
 export { default as img32 } from './WhatsApp Image 2026-03-13 at 10.33.03 AM.jpeg';
 export { default as img33 } from './WhatsApp Image 2026-03-13 at 10.33.04 AM.jpeg';
 
+export { default as profilePhoto } from './photo.jpeg';
+
