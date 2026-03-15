@@ -211,7 +211,6 @@ const App = () => {
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
-            <p className="mt-6 text-sm font-medium text-slate-600 tracking-wide uppercase">Civil Site Engineer</p>
           </div>
 
           {/* Hero Content */}
